@@ -178,6 +178,8 @@ nav {
   text-transform: uppercase;
 }
 
+/* Модальное окно  */
+
 .overlay {
   max-width: 1600px;
   height: 600px;
@@ -237,10 +239,114 @@ nav {
 
 .close {
   fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:hover {
+  fill: var(--accent-color);
+}
+
+/* Форма заявки */
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.application-form p {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: #212121;
+}
+
+.form-fild {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 58px;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.input-form {
+  height: 40px;
+  padding: 10px 10px 10px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 12px;
+  transform: translateY(50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label-form {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+.form-fild.comment-place {
+  height: 138px;
+  margin-bottom: 20px;
+}
+
+.textarea-form {
+  resize: none;
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-form:focus,
+.textarea-form:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.input-form:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.agreement-fild {
+  margin-bottom: 30px;
+}
+
+.agreement-label {
+  font-size: 14px;
+  line-height: 1.71;
+  color: #757575;
+}
+
+.contract-link {
+  color: var(--accent-color);
+}
+
+.button-form {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Button */
-.button {
+.button,
+.button-form {
   width: 200px;
   height: 50px;
   color: var(--white-color);
@@ -250,10 +356,15 @@ nav {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover {
+.button:hover,
+.button-form:hover {
   background-color: #188ce8;
 }
 
@@ -555,14 +666,97 @@ address a {
   margin-left: 70px;
 }
 
+/* Форма для футера */
+
 .footer-form {
+  width: 570px;
   margin-left: 93px;
 }
 
 .footer-button {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(145, 137, 137, 0.15);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-button:hover {
+  background-color: #188ce8;
+}
+
+.icon-send {
+  margin-left: 10px;
+  fill: var(--white-color);
+}
+
+.footer-input-button {
+  display: flex;
+}
+
+.input-place {
+  width: 358px;
+  padding: 15px 16px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-place:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.agreement-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agreement-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agreement-checkbox:checked + .check-icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-image: url('../images/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
+}
 /* СТИЛИ ДЛЯ ПОРТФОЛИО */
 
 .page-header {
@@ -676,7 +870,8 @@ address a {
   color: var(--white-color);
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link.project-item:hover .project-description {
